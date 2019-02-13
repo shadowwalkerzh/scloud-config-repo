@@ -9,13 +9,9 @@ zuul:
   retryable: true
   stripPrefix: false
   routes:
-    scloud-micro-service-1:
+    scloud-micro-service:
       path: /service1/**
-      serviceId: scloud-micro-service-1
-      stripPrefix: false
-    scloud-micro-service-2:
-      path: /service2/**
-      serviceId: scloud-micro-service-2
+      serviceId: scloud-micro-service
       stripPrefix: false
 
 ribbon:
@@ -25,6 +21,6 @@ ribbon:
   ConnectTimeout: 30000
   ReadTimeout: 30000
 
-scloud-micro-service-1:
+scloud-micro-service:
   ribbon:
-    retryableStatusCodes: 500
+    retryableStatusCodes: 500 # custom http status codes needed to be retried
