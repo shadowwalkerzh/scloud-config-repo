@@ -24,3 +24,7 @@ ribbon:
   OkToRetryOnAllOperations: true
   ConnectTimeout: 30000
   ReadTimeout: 30000
+
+scloud-micro-service-1:
+  ribbon:
+    retryableStatusCodes: 500
