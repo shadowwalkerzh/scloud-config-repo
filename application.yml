@@ -1,26 +1,3 @@
 spring:
   project:
     name: warehouse
-
-zuul:
-  host:
-    connect-timeout-millis: 60000
-    socket-timeout-millis: 60000
-  retryable: true
-  stripPrefix: false
-  routes:
-    scloud-micro-service:
-      path: /service1/**
-      serviceId: scloud-micro-service
-      stripPrefix: false
-
-ribbon:
-  MaxAutoRetries: 0
-  MaxAutoRetriesNextServer: 2
-  OkToRetryOnAllOperations: true
-  ConnectTimeout: 30000
-  ReadTimeout: 30000
-
-scloud-micro-service:
-  ribbon:
-    retryableStatusCodes: 500 # custom http status codes needed to be retried
