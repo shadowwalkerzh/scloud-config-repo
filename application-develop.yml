@@ -1,3 +1,47 @@
-spring:
-  project:
-    name: warehouse develop profile
+project:
+  common:
+    config:
+      name: common config
+
+---
+spring.profiles: scloud-zuul
+
+zuul:
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+  retryable: true
+  stripPrefix: false
+  routes:
+    scloud-micro-service-1-1:
+      path: /biz/service/**
+      serviceId: scloud-micro-service-1
+      stripPrefix: false
+    scloud-micro-service-2-1:
+      path: /biz/service/**
+      serviceId: scloud-micro-service-2
+      stripPrefix: false
+
+guardian-brain-service:
+  ribbon:
+    retryableStatusCodes: 205 # Reset content, custom http status codes needed to be retried
+
+ribbon:
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 2
+  OkToRetryOnAllOperations: true
+  ConnectTimeout: 30000
+  ReadTimeout: 30000
+
+---
+spring.profiles: scloud-micro-service-1
+service1:
+  property:
+    sid: scloud-micro-service-1
+
+
+---
+spring.profiles: scloud-micro-service-2
+service2:
+  property:
+    sid: scloud-micro-service-2
