@@ -17,8 +17,17 @@ zuul:
       path: /biz/service/**
       serviceId: scloud-micro-service-1
       stripPrefix: false
+    scloud-micro-service-1-2:
+      path: /biz/service1/**
+      serviceId: scloud-micro-service-1
+      stripPrefix: false
+
     scloud-micro-service-2-1:
       path: /biz/service/**
+      serviceId: scloud-micro-service-2
+      stripPrefix: false
+    scloud-micro-service-2-2:
+      path: /biz/service2/**
       serviceId: scloud-micro-service-2
       stripPrefix: false
 
