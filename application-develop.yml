@@ -31,7 +31,10 @@ zuul:
       serviceId: scloud-micro-service-2
       stripPrefix: false
 
-guardian-brain-service:
+scloud-micro-service-1:
+  ribbon:
+    retryableStatusCodes: 205 # Reset content, custom http status codes needed to be retried
+scloud-micro-service-2:
   ribbon:
     retryableStatusCodes: 205 # Reset content, custom http status codes needed to be retried
 
