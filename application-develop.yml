@@ -41,9 +41,9 @@ scloud-micro-service-2:
 
 # ribbon global config
 ribbon:
-  MaxAutoRetries: 0
-  MaxAutoRetriesNextServer: 2
-  OkToRetryOnAllOperations: true
+  MaxAutoRetries: 2 # Max number of retries on the same server excluding the first try
+  MaxAutoRetriesNextServer: 0 # Max number of next servers to retry excluding the first server
+  OkToRetryOnAllOperations: true # Whether all operations can be retried for this client, default false
   ConnectTimeout: 30000
   ReadTimeout: 30000
 
