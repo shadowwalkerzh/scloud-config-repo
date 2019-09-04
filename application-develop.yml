@@ -31,6 +31,7 @@ zuul:
       serviceId: scloud-micro-service-2
       stripPrefix: false
 
+# specific client ribbon config
 scloud-micro-service-1:
   ribbon:
     retryableStatusCodes: 205 # Reset content, custom http status codes needed to be retried
@@ -38,6 +39,7 @@ scloud-micro-service-2:
   ribbon:
     retryableStatusCodes: 205 # Reset content, custom http status codes needed to be retried
 
+# ribbon global config
 ribbon:
   MaxAutoRetries: 0
   MaxAutoRetriesNextServer: 2
