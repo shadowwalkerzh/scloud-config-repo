@@ -23,7 +23,6 @@ zuul:
       stripPrefix: false
     scloud-micro-service-1-3:
       path: /biz/service1/foward/**
-      serviceId: scloud-micro-service-1
       url: forward:/biz/service1/fd
       stripPrefix: false
 
